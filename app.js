@@ -88,6 +88,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
 
+//Heroku client build middleware
+app.use(express.static(path.resolve(__dirname, './client/build')));
+
 //route middleware
 fs.readdirSync('./routes').map((routes) =>
   app.use('/api', require(`./routes/${routes}`))
