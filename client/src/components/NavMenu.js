@@ -96,7 +96,7 @@ const NavMenu = () => {
     <div className='container-fluid p-0'>
       <div className='navmenu navbar navbar-expand-sm navbar-dark px-sm-5 container-fluid nav-shadow'>
         <Link className='navbar-brand' to='/'>
-          BuynSell.ng
+          Buy-and-Sell
         </Link>
         <ul className='navbar-nav align-items-center ms-auto'>
           <li className='nav-item ml-5 px-2'>
