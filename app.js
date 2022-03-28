@@ -89,11 +89,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
 
 //Heroku client build middleware
-app.use(express.static(path.resolve(__dirname, './client/build')));
+// app.use(express.static(path.resolve(__dirname, './client/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build/index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.resolve(__dirname, './client/build')));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+  });
+}
 
 //route middleware
 fs.readdirSync('./routes').map((routes) =>
