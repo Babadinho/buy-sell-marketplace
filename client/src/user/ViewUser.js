@@ -160,7 +160,7 @@ const ViewUser = ({ match, history }) => {
                     type='primary'
                     danger
                     shape='round'
-                    onClick={() => history.push(`/messages?message=${_id}`)}
+                    onClick={() => history.push(`/messages?&message=${_id}`)}
                   >
                     MESSAGE
                   </Button>

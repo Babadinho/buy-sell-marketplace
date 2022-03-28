@@ -34,7 +34,7 @@ const Chat = ({ match }) => {
               <h2 className='text-center d-flex align-items-center'>
                 <span>
                   <Link
-                    to={`/user/messages?message=${match.params.chatId}`}
+                    to={`/user/messages?&message=${match.params.chatId}`}
                     className='text-decoration-none text-dark1 pe-4'
                   >
                     <Tooltip title='Back to Messages'>

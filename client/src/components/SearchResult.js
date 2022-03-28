@@ -61,7 +61,6 @@ const SearchResult = () => {
   };
   const loadLocations = async () => {
     const { location } = queryString.parse(window.location.hash);
-    console.log(location);
     const res = await allLocations();
     res.data.filter((loc) => {
       if (loc._id === location) {

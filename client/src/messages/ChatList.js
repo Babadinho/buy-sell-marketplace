@@ -41,7 +41,7 @@ const ChatList = () => {
 
   const socket = useRef();
 
-  const { message } = queryString.parse(window.location.search);
+  const { message } = queryString.parse(window.location.hash);
   const history = useHistory();
 
   const divRef = useRef();
@@ -80,7 +80,7 @@ const ChatList = () => {
     }
 
     if (chats.length > 0 && !message) {
-      history.push(`/messages?message=${chats[0].messagesWith}`);
+      history.push(`/messages?&message=${chats[0].messagesWith}`);
     }
 
     return () => {
@@ -306,7 +306,7 @@ const ChatList = () => {
                           active={message === chat.messagesWith}
                           onClick={() =>
                             history.push(
-                              `/messages?message=${chat.messagesWith}`
+                              `/messages?&message=${chat.messagesWith}`
                             )
                           }
                         >

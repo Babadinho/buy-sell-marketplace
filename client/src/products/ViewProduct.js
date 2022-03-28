@@ -301,7 +301,7 @@ const ViewProduct = ({ match, history }) => {
                       color: '#ffffff',
                     }}
                     onClick={() =>
-                      history.push(`/messages?message=${productAuthor._id}`)
+                      history.push(`/messages?&message=${productAuthor._id}`)
                     }
                   >
                     <i class='fas fa-envelope me-2'></i> Message
