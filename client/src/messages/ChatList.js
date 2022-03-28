@@ -41,7 +41,7 @@ const ChatList = () => {
 
   const socket = useRef();
 
-  const { message } = queryString.parse(window.location.search);
+  const { message } = queryString.parse(window.location.hash);
   const history = useHistory();
 
   const divRef = useRef();
