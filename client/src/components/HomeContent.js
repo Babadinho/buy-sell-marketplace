@@ -215,7 +215,7 @@ const HomeContent = ({ categories }) => {
           {products.map((p, i) => {
             if (p.status === 'active') {
               return (
-                <Grid xs key={i} justify='center'>
+                <Grid xs={6} md={4} key={i} justify='center'>
                   <div
                     className='card card-shadow rounded-0 mb-3'
                     style={{ width: '100%' }}
