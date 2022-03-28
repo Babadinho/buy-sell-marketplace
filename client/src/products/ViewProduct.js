@@ -20,7 +20,6 @@ const { Meta } = Card;
 
 const ViewProduct = ({ match, history }) => {
   const dispatch = useDispatch();
-  const categoryId = useSelector((state) => state.buynsellProduct);
   const [product, setProduct] = useState([]);
   const [productImages, setProductImages] = useState([]);
   const [productLocation, setProductLocation] = useState([]);
@@ -33,15 +32,13 @@ const ViewProduct = ({ match, history }) => {
   const [favourite, setFavourite] = useState(false);
   const [favCount, setFavCount] = useState(null);
 
-  const { pathname } = window.location;
-
   const { user, token } = isAuthenticated();
 
   useEffect(() => {
     loadProduct();
     loadUser();
     loadFavouriteCount();
-  }, [favourite, reported, pathname]);
+  }, [favourite, reported, match.params.productId]);
 
   const loadUser = async () => {
     if (user && token) {
