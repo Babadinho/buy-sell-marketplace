@@ -31,7 +31,7 @@ const SearchResult = () => {
 
   const loadSearchResults = async (page) => {
     const { location, category, name } = queryString.parse(
-      window.location.hash
+      window.location.search
     );
     setCategory(category);
     setLocation(location);
@@ -51,7 +51,7 @@ const SearchResult = () => {
   };
 
   const loadCategories = async () => {
-    const { category } = queryString.parse(window.location.hash);
+    const { category } = queryString.parse(window.location.search);
     const res = await allCategories();
     res.data.filter((cat) => {
       if (cat._id === category) {
@@ -60,7 +60,7 @@ const SearchResult = () => {
     });
   };
   const loadLocations = async () => {
-    const { location } = queryString.parse(window.location.hash);
+    const { location } = queryString.parse(window.location.search);
     const res = await allLocations();
     res.data.filter((loc) => {
       if (loc._id === location) {
@@ -140,7 +140,7 @@ const SearchResult = () => {
     loadSearchResults(1);
     loadCategories();
     loadLocations();
-  }, [window.location.hash]);
+  }, [window.location.search]);
 
   return (
     <>
