@@ -106,7 +106,7 @@ fs.readdirSync('./routes').map((routes) =>
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
-app.use(routes);
+
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
