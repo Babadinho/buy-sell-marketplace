@@ -1,4 +1,4 @@
-import { HashRouter as BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Toaster } from 'react-hot-toast';
 import { isAuthenticated } from './actions/auth';
