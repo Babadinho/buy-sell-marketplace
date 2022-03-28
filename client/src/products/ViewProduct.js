@@ -226,7 +226,7 @@ const ViewProduct = ({ match, history }) => {
               </p>
             </div>
           </div>
-          {category._id && <RelatedProducts category={category._id} />}
+          {categoryId._id && <RelatedProducts category={category._id} />}
         </div>
         <div className='col-md-3'>
           <div className='card rounded-0 profile-card'>
@@ -275,7 +275,7 @@ const ViewProduct = ({ match, history }) => {
                 </span>
               </span>
             </Card>
-            {user._id !== productAuthor._id && (
+            {user && user._id !== productAuthor._id && (
               <div className='d-flex justify-content-evenly pe-4 ps-4 mb-4'>
                 <div className=''>
                   <Link to={`/user/${productAuthor._id}`}>

@@ -42,7 +42,7 @@ const Register = ({ history }) => {
     <>
       <div className='container mt-5'>
         <div className='row'>
-          <div className='col-md-7 mx-auto'>
+          <div className='col-md-10 col-lg-6 col-sm-11 mx-auto'>
             <RegisterForm
               handleSubmit={handleSubmit}
               handleChange={handleChange}

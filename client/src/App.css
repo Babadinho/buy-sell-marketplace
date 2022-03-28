@@ -403,9 +403,9 @@ ul.dropdown-menu .nav-link:hover {
 .nextui-c-kRHeuF {
   padding: 5px !important;
 }
-.row > * {
+/* .row > * {
   padding-right: 0 !important;
-}
+} */
 .product-mobile {
   display: flex !important;
   flex-direction: row !important;

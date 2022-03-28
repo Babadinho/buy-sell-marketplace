@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "engines": {
-    "node": "12.18.4"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "nodemon app.js"
   },
   "author": "Babadinho",
   "license": "ISC",

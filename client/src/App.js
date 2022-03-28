@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Toaster } from 'react-hot-toast';
+import { isAuthenticated } from './actions/auth';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -46,6 +47,8 @@ import ChatList from './messages/ChatList';
 import Chat from './messages/Chat';
 
 function App() {
+  const { user } = isAuthenticated();
+
   return (
     <BrowserRouter>
       <NavMenu />
@@ -54,8 +57,12 @@ function App() {
       <ToastContainer position='top-center' />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
+        <Route exact path='/login' component={user ? UserDashboard : Login} />
+        <Route
+          exact
+          path='/register'
+          component={user ? UserDashboard : Register}
+        />
         <Route exact path='/search-result' component={SearchResult} />
         <Route exact path='/category/:categoryId' component={CategoryView} />
         <Route exact path='/product/:productId' component={ViewProduct} />

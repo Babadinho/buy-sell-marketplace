@@ -121,7 +121,19 @@ const Footer = () => {
           <div className='container'>
             <div className='text-center'>
               <p className='mb-0 f_400'>
-                © Buy n Sell. 2021 All rights reserved.
+                © Buy-and-Sell. 2022 All rights reserved.
+              </p>
+              <p>
+                Built with <i class='fa fa-heart text-danger'></i> by{' '}
+                <strong>
+                  <a
+                    href='https://github.com/Babadinho'
+                    target='_blank'
+                    className='text-danger'
+                  >
+                    Babadinho
+                  </a>
+                </strong>
               </p>
             </div>
           </div>
