@@ -173,7 +173,7 @@ const HomeContent = ({ categories }) => {
                           </div>
                           <span class='card-text d-flex justify-content-between mt-2'>
                             <Link
-                              to={`/search-result?location=${p.location._id}&category=&name=&price=&condition=`}
+                              to={`/search-result?$location=${p.location._id}&category=&name=&price=&condition=`}
                               className='text-decoration-none'
                             >
                               <small class='text-muted'>

@@ -31,10 +31,10 @@ const SearchResult = () => {
 
   const loadSearchResults = async (page) => {
     const { location, category, name } = queryString.parse(
-      window.location.search
+      window.location.hash
     );
-    setLocation(location);
     setCategory(category);
+    setLocation(location);
     setName(name);
     const res = await searchResults({
       location,
@@ -51,7 +51,7 @@ const SearchResult = () => {
   };
 
   const loadCategories = async () => {
-    const { category } = queryString.parse(window.location.search);
+    const { category } = queryString.parse(window.location.hash);
     const res = await allCategories();
     res.data.filter((cat) => {
       if (cat._id === category) {
@@ -60,7 +60,8 @@ const SearchResult = () => {
     });
   };
   const loadLocations = async () => {
-    const { location } = queryString.parse(window.location.search);
+    const { location } = queryString.parse(window.location.hash);
+    console.log(location);
     const res = await allLocations();
     res.data.filter((loc) => {
       if (loc._id === location) {
@@ -72,14 +73,14 @@ const SearchResult = () => {
   const handleCondition = (e) => {
     setCondition(e.target.value);
     history.push(
-      `search-result?location=${location}&category=${category}&name=${name}&price=${price}&condition=${e.target.value}`
+      `search-result?&location=${location}&category=${category}&name=${name}&price=${price}&condition=${e.target.value}`
     );
   };
 
   const handlePriceRange = (e) => {
     setPrice(e.target.value);
     history.push(
-      `search-result?location=${location}&category=${category}&name=${name}&price=${e.target.value}&condition=${condition}`
+      `search-result?&location=${location}&category=${category}&name=${name}&price=${e.target.value}&condition=${condition}`
     );
     setMin('');
     setMax('');
@@ -91,7 +92,7 @@ const SearchResult = () => {
 
   const handleSubmit = (name) => {
     history.push(
-      `search-result?location=${location}&category=${category}&name=${name}&price=${price}&condition=${condition}`
+      `search-result?&location=${location}&category=${category}&name=${name}&price=${price}&condition=${condition}`
     );
   };
 
@@ -126,7 +127,7 @@ const SearchResult = () => {
     setPrice(newArray);
 
     history.push(
-      `search-result?location=${location}&category=${category}&name=${name}&price=${newArray}&condition=${condition}`
+      `search-result?&location=${location}&category=${category}&name=${name}&price=${newArray}&condition=${condition}`
     );
   };
 
@@ -140,7 +141,7 @@ const SearchResult = () => {
     loadSearchResults(1);
     loadCategories();
     loadLocations();
-  }, [window.location.search]);
+  }, [window.location.hash]);
 
   return (
     <>
@@ -356,7 +357,7 @@ const SearchResult = () => {
                               </div>
                               <div class='card-text d-flex justify-content-between'>
                                 <Link
-                                  to={`/search-result?location=${p.location._id}&category=&name=&price=&condition=`}
+                                  to={`/search-result?&location=${p.location._id}&category=&name=&price=&condition=`}
                                   className='text-decoration-none'
                                 >
                                   <p
@@ -483,7 +484,7 @@ const SearchResult = () => {
                           <div class='card-text d-flex justify-content-between align-items-center mt-1'>
                             <div>
                               <Link
-                                to={`/search-result?location=${p.location._id}&category=&name=&price=&condition=`}
+                                to={`/search-result?&location=${p.location._id}&category=&name=&price=&condition=`}
                                 className='text-decoration-none mt-auto'
                               >
                                 <p

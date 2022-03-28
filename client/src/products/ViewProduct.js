@@ -33,7 +33,7 @@ const ViewProduct = ({ match, history }) => {
   const [favourite, setFavourite] = useState(false);
   const [favCount, setFavCount] = useState(null);
 
-  let category2 = '';
+  const { pathname } = window.location;
 
   const { user, token } = isAuthenticated();
 
@@ -41,7 +41,7 @@ const ViewProduct = ({ match, history }) => {
     loadProduct();
     loadUser();
     loadFavouriteCount();
-  }, [favourite, reported]);
+  }, [favourite, reported, pathname]);
 
   const loadUser = async () => {
     if (user && token) {
@@ -175,7 +175,7 @@ const ViewProduct = ({ match, history }) => {
                     {moment(product.createdAt).fromNow()}
                   </p>
                   <Link
-                    to={`/search-result?location=${productLocation._id}&category=&name=&price=&condition=`}
+                    to={`/search-result?&location=${productLocation._id}&category=&name=&price=&condition=`}
                     className='text-decoration-none'
                   >
                     <p className='text-muted' style={{ fontSize: '14px' }}>
@@ -226,7 +226,7 @@ const ViewProduct = ({ match, history }) => {
               </p>
             </div>
           </div>
-          {categoryId._id && <RelatedProducts category={category._id} />}
+          {category && <RelatedProducts category={category._id} />}
         </div>
         <div className='col-md-3'>
           <div className='card rounded-0 profile-card'>
@@ -258,7 +258,7 @@ const ViewProduct = ({ match, history }) => {
                       </a>
                     </Tooltip>
                   ) : (
-                    <span className='text-dark1 bg-light text-center p-2 pe-5 ps-5 bg-light'>
+                    <span className='text-dark1 bg-light text-center p-2 pe-2 ps-2 bg-light'>
                       {' '}
                       <i>Login to view seller number..</i>
                     </span>

@@ -296,7 +296,7 @@ const AdminDashboard = () => {
                               </div>
                               <span class='card-text d-flex justify-content-between'>
                                 <Link
-                                  to={`/search-result?location=${p.location._id}&category=&name=&price=&condition=`}
+                                  to={`/search-result?&location=${p.location._id}&category=&name=&price=&condition=`}
                                   className='text-decoration-none'
                                 >
                                   <p className='text-muted'>

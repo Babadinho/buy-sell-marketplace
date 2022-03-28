@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
 import { Tooltip } from 'antd';
 import { relatedProducts } from '../actions/product';
-import Slider from 'react-slick';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const RelatedProducts = ({ category }) => {
   const [related, setRelated] = useState([]);
@@ -23,43 +24,23 @@ const RelatedProducts = ({ category }) => {
     return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
   };
 
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 3,
-    centerPadding: '60px',
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 3,
-          initialSlide: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          initialSlide: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
 
   return (
@@ -69,15 +50,12 @@ const RelatedProducts = ({ category }) => {
           Related Products
         </h3>
       </div>
-      <Slider {...settings}>
+      <Carousel responsive={responsive}>
         {related.map((p, i) => {
           if (p.status === 'active') {
             return (
               <div key={i}>
-                <div
-                  className='card card-shadow mb-4'
-                  style={{ width: '21rem' }}
-                >
+                <div className='card card-shadow mb-4' style={{ width: '98%' }}>
                   <div className='product-img1'>
                     <Link
                       to={`/product/${p._id}`}
@@ -119,7 +97,7 @@ const RelatedProducts = ({ category }) => {
                     </div>
                     <span class='card-text d-flex justify-content-between mt-2'>
                       <Link
-                        to={`/search-result?location=${p.location._id}&category=&name=&price=&condition=`}
+                        to={`/search-result?&location=${p.location._id}&category=&name=&price=&condition=`}
                         className='text-decoration-none'
                       >
                         <small class='text-muted'>
@@ -145,7 +123,7 @@ const RelatedProducts = ({ category }) => {
             );
           }
         })}
-      </Slider>
+      </Carousel>
     </div>
   );
 };

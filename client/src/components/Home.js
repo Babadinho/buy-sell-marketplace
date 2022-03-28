@@ -48,7 +48,7 @@ const Home = () => {
   };
   const handleSubmit = (e) => {
     history.push(
-      `search-result?location=${location}&category=${category}&name=${name}&price=${price}&condition=${condition}`
+      `search-result?&location=${location}&category=${category}&name=${name}&price=${price}&condition=${condition}`
     );
   };
   // search functions end
