@@ -91,17 +91,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Heroku client build middleware
 // app.use(express.static(path.resolve(__dirname, './client/build')));
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, './client/build')));
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.resolve(__dirname, './client/build')));
+//   app.get('*', function (req, res) {
+//     res.sendFile(path.join(__dirname, './client/build/index.html'));
+//   });
+// }
 
 //route middleware
 fs.readdirSync('./routes').map((routes) =>
   app.use('/api', require(`./routes/${routes}`))
 );
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+app.use(routes);
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
 
 const port = process.env.PORT || 8000;
 
