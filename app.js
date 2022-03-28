@@ -96,10 +96,6 @@ fs.readdirSync('./routes').map((routes) =>
   app.use('/api', require(`./routes/${routes}`))
 );
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
-
 const port = process.env.PORT || 8000;
 
 server.listen(port, () => {
