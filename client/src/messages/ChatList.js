@@ -41,7 +41,7 @@ const ChatList = () => {
 
   const socket = useRef();
 
-  const { message } = queryString.parse(window.location.hash);
+  const { message } = queryString.parse(window.location.search);
   const history = useHistory();
 
   const divRef = useRef();
@@ -67,7 +67,7 @@ const ChatList = () => {
   //CONNECTION useEffect
   useEffect(() => {
     if (!socket.current) {
-      socket.current = io('https://buy-sell-v1.herokuapp.com', {
+      socket.current = io('http://localhost:8000', {
         transports: ['websocket'],
       });
     }
