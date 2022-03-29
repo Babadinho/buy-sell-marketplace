@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer className='new_footer_area bg_color'>
         <div className='new_footer_top'>
-          <div className='container'>
+          <div className='container-fluid'>
             <div className='row'>
               <div className='col-md-3 mb-4'>
                 <div
