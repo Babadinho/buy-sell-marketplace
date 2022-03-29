@@ -16,9 +16,7 @@ const Footer = () => {
                   <h3 className='f-title f_600 t_color f_size_18'>
                     Get in Touch
                   </h3>
-                  <p>
-                    Don’t miss any updates of our new templates and extensions.!
-                  </p>
+                  <p>Don’t miss any updates. Get in touch now!</p>
                   <form className='d-flex flex-nowrap' style={{ width: '90%' }}>
                     <input
                       type='text'
