@@ -67,7 +67,7 @@ const ChatList = () => {
   //CONNECTION useEffect
   useEffect(() => {
     if (!socket.current) {
-      socket.current = io('http://localhost:8000', {
+      socket.current = io('https://buy-sell-v1.herokuapp.com', {
         transports: ['websocket'],
       });
     }
