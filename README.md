@@ -10,14 +10,14 @@ All-in-One Marketplace where users can buy or list different products for sale. 
 # Some Features
 ![My Image](https://raw.githubusercontent.com/babadinho/buy-sell-marketplace/main/client/public/site-1.gif)
 
-# Some Features
+
 ![My Image](https://raw.githubusercontent.com/babadinho/buy-sell-marketplace/main/client/public/site-2.gif)
 
-# Some Features
+
 ![My Image](https://raw.githubusercontent.com/babadinho/buy-sell-marketplace/main/client/public/site-3.gif)
 
-# Some Features
+
 ![My Image](https://raw.githubusercontent.com/babadinho/buy-sell-marketplace/main/client/public/site-4.gif)
 
-# Some Features
+
 ![My Image](https://raw.githubusercontent.com/babadinho/buy-sell-marketplace/main/client/public/site-5.gif)
