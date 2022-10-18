@@ -22,9 +22,6 @@ exports.register = async (req, res) => {
       return res.status(400).send('Pasword must contain a number');
 
     //validate phone
-    // if (phone.parseInt() != isNaN)
-    // return res.status(400).send('Phone number must be a number');
-
     let phoneno = /^\d{11}$/;
     if (!phone.match(phoneno))
       return res.status(400).send('Phone number must be 11 characters long');

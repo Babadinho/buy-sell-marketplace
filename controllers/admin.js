@@ -170,35 +170,6 @@ exports.updateCategory = async (req, res) => {
   }
 };
 
-// exports.getCategory = async (req, res) => {
-//   let category = await Category.findById(req.params.categoryId).exec();
-//   res.json(category);
-// };
-
-// exports.editCategory = async (req, res) => {
-//   try {
-//     const { category } = req.body;
-
-//     //validate fields
-//     if (!category)
-//       return res.status(400).send('Field cannot be empty');
-
-//     let newCategory = {
-//       name: category
-//     };
-
-//     const updatedCategory = await Category.findOneAndUpdate(
-//       { _id: req.params.categoryId },
-//       { $set: newCategory },
-//       { new: true, useFindAndModify: false }
-//     );
-//     res.json(updatedCategory);
-//   } catch (err) {
-//     console.log('UPDATE USER FAILED', err);
-//     return res.status(400).send('Error. Try again');
-//   }
-// };
-
 exports.deleteCategory = async (req, res) => {
   try {
     const category = await Category.findById(req.params.categoryId);

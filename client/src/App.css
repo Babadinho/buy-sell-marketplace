@@ -253,12 +253,7 @@ ul.dropdown-menu .nav-link:hover {
   .mobile-product-view {
     flex-direction: column !important;
   }
-  /* .card-title-cat {
-    width: 130px !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  } */
+
   .mobile-card-desc {
     display: none !important;
   }

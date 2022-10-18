@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { isAuthenticated } from '../actions/auth';
-// import { toast } from 'react-toastify';
-// import toast from 'react-hot-toast';
 import { message, Button, Result } from 'antd';
 import { getUser } from '../actions/user';
 import { updatePassword } from '../actions/user';

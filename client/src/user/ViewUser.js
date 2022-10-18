@@ -396,40 +396,6 @@ const ViewUser = ({ match, history }) => {
                               </span>
                             </Link>
                           </div>
-                          {/* {user && token && favourites.includes(p._id) && (
-                            <Tooltip title='Remove from Favourites'>
-                              <span
-                                className='product-fav d-flex align-items-center justify-content-center'
-                                onClick={() => handleRemoveFavourite(p._id)}
-                                role='button'
-                                style={{
-                                  width: '28px',
-                                  height: '28px',
-                                  borderRadius: '50%',
-                                  border: '1px solid rgba(0, 0, 0, 0.125)',
-                                }}
-                              >
-                                <i class='fas fa-star'></i>
-                              </span>
-                            </Tooltip>
-                          )}
-                          {user && token && !favourites.includes(p._id) && (
-                            <Tooltip title='Add to Favourites'>
-                              <span
-                                className='product-fav d-flex align-items-center justify-content-center'
-                                onClick={() => handleAddFavourite(p._id)}
-                                role='button'
-                                style={{
-                                  width: '28px',
-                                  height: '28px',
-                                  borderRadius: '50%',
-                                  border: '1px solid rgba(0, 0, 0, 0.125)',
-                                }}
-                              >
-                                <i class='far fa-star fa-star-text'></i>
-                              </span>
-                            </Tooltip>
-                          )} */}
                         </div>
                         <div class='card-body pt-3 pb-2'>
                           <div>
